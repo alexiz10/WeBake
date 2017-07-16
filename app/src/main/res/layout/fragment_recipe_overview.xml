@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/tv_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/ingredients_text_padding"
+            android:paddingLeft="@dimen/ingredients_text_padding"
+            android:paddingStart="@dimen/ingredients_text_padding"
+            android:paddingRight="@dimen/ingredients_text_padding"
+            android:paddingEnd="@dimen/ingredients_text_padding"
+            android:textSize="@dimen/ingredients_text_size"
+            android:textColor="@android:color/black"
+            tools:text="@string/ingredients_text_placeholder" />
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/instruction_list_label_padding"
+        android:text="@string/instruction_list_label_text"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/instruction_list_label_text_size" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_instructions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
+
+</LinearLayout>

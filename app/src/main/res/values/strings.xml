@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeBake</string>
+
+    <string name="error_message">There was an issue when loading recipes. Please try again.</string>
+
+    <string name="instruction_list_label_text">Steps</string>
+
+    <string name="recipe_name_text_placeholder" translatable="false">Recipe Name</string>
+    <string name="instruction_list_item_text_placeholder" translatable="false">Step 0: Introduction</string>
+    <string name="ingredients_text_placeholder" translatable="false">Graham Cracker Crumbs, 2 CUP</string>
+</resources>

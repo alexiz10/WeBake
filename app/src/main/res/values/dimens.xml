@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="error_message_text_size">24sp</dimen>
+    <dimen name="loading_indicator_size">42dp</dimen>
+    <dimen name="recipe_name_text_padding">10dp</dimen>
+
+    <dimen name="ingredients_text_size">16sp</dimen>
+    <dimen name="ingredients_text_padding">8dp</dimen>
+
+    <dimen name="instruction_list_item_separator_height">1dp</dimen>
+    <dimen name="instruction_list_item_text_padding">16dp</dimen>
+    <dimen name="instruction_list_item_text_size">16sp</dimen>
+    <dimen name="instruction_list_label_padding">4dp</dimen>
+    <dimen name="instruction_list_label_text_size">16sp</dimen>
+</resources>
