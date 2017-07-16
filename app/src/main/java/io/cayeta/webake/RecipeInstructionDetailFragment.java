@@ -65,17 +65,32 @@ public class RecipeInstructionDetailFragment extends Fragment {
 
         mDescriptionTextView = (TextView) view.findViewById(R.id.tv_instruction_description);
 
+        String videoURL = instructions.get(currentPosition).getVideoURL();
+        String thumbnailURL = instructions.get(currentPosition).getThumbnailURL();
+
         Uri videoUri;
 
-        if (!instructions.get(currentPosition).getVideoURL().equals("")) {
-            videoUri = Uri.parse(instructions.get(currentPosition).getVideoURL());
+        if (!videoURL.equals("")) {
+            videoUri = Uri.parse(videoURL);
 
             initializePlayer(videoUri);
+        } else if (!thumbnailURL.equals("") && isMp4(thumbnailURL)) {
+            videoUri = Uri.parse(thumbnailURL);
+
+            initializePlayer(videoUri);
+        } else {
+            mPlayerView.setVisibility(View.GONE);
         }
 
         mDescriptionTextView.setText(instructions.get(currentPosition).getDescription());
 
         return view;
+    }
+
+    private boolean isMp4(String filename) {
+        String fileType = filename.substring(filename.lastIndexOf(".") + 1, filename.length());
+
+        return fileType.equalsIgnoreCase("mp4");
     }
 
     private void initializePlayer(Uri mediaUri) {
@@ -94,9 +109,11 @@ public class RecipeInstructionDetailFragment extends Fragment {
     }
 
     private void releasePlayer() {
-        mExoPlayer.stop();
-        mExoPlayer.release();
-        mExoPlayer = null;
+        if (mExoPlayer != null) {
+            mExoPlayer.stop();
+            mExoPlayer.release();
+            mExoPlayer = null;
+        }
     }
 
     @Override
