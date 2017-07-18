@@ -33,6 +33,8 @@ public class RecipeInstructionDetailFragment extends Fragment {
 
     private boolean mDualPane;
 
+    private boolean mLandscape;
+
     private SimpleExoPlayer mExoPlayer;
     private SimpleExoPlayerView mPlayerView;
 
@@ -55,6 +57,7 @@ public class RecipeInstructionDetailFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_recipe_instruction_detail, container, false);
 
         mDualPane = getResources().getBoolean(R.bool.isTablet);
+        mLandscape = getResources().getBoolean(R.bool.isLandscape);
 
         Bundle bundle = getArguments();
 
@@ -62,8 +65,6 @@ public class RecipeInstructionDetailFragment extends Fragment {
         int currentPosition = bundle.getInt(ARGUMENT_SELECTED_INSTRUCTION_POSITION);
 
         mPlayerView = (SimpleExoPlayerView) view.findViewById(R.id.playerView);
-
-        mDescriptionTextView = (TextView) view.findViewById(R.id.tv_instruction_description);
 
         String videoURL = instructions.get(currentPosition).getVideoURL();
         String thumbnailURL = instructions.get(currentPosition).getThumbnailURL();
@@ -82,7 +83,10 @@ public class RecipeInstructionDetailFragment extends Fragment {
             mPlayerView.setVisibility(View.GONE);
         }
 
-        mDescriptionTextView.setText(instructions.get(currentPosition).getDescription());
+        if (mDualPane || !mLandscape) {
+            mDescriptionTextView = (TextView) view.findViewById(R.id.tv_instruction_description);
+            mDescriptionTextView.setText(instructions.get(currentPosition).getDescription());
+        }
 
         return view;
     }
