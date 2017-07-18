@@ -64,7 +64,7 @@ public class RecipeOverviewFragment extends Fragment implements InstructionListA
             stringBuilder.append(" ")
                     .append(ingredients.get(i).getMeasurement());
 
-            if (i != ingredients.size()) {
+            if (i != ingredients.size() - 1) {
                 stringBuilder.append("\n");
             }
         }
