@@ -66,6 +66,9 @@ public class JsonUtils {
     public static Recipe convertFromJSON(String json) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
+        if (json == null || json.isEmpty()) {
+            return null;
+        }
         return gson.fromJson(json, Recipe.class);
     }
 
