@@ -6,10 +6,11 @@ import com.google.gson.GsonBuilder;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import io.cayeta.webake.models.*;
+import io.cayeta.webake.models.Ingredient;
+import io.cayeta.webake.models.Instruction;
+import io.cayeta.webake.models.Recipe;
 
 public class JsonUtils {
 

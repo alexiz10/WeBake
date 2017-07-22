@@ -1,6 +1,7 @@
 package io.cayeta.webake;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import io.cayeta.webake.utils.JsonUtils;
 import io.cayeta.webake.utils.NetworkUtils;
 
 public class RecipeListActivity extends AppCompatActivity implements RecipeListAdapter.RecipeListAdapterOnClickHandler {
+
+    private static final String PREFS_NAME = "WeBakePrefs";
 
     private static final String ARGUMENT_RECIPE_KEY = "recipe";
 
@@ -73,6 +76,11 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeListA
 
     @Override
     public void onClick(Recipe recipe) {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(ARGUMENT_RECIPE_KEY, JsonUtils.convertToJSON(recipe));
+        editor.apply();
+
         Intent intent = new Intent(this, RecipeDetailsActivity.class);
         intent.putExtra(ARGUMENT_RECIPE_KEY, recipe);
         startActivity(intent);
