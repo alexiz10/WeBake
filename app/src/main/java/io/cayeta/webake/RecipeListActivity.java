@@ -3,8 +3,8 @@ package io.cayeta.webake;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,10 +15,10 @@ import android.widget.TextView;
 import java.net.URL;
 import java.util.ArrayList;
 
-import io.cayeta.webake.R;
 import io.cayeta.webake.adapters.RecipeListAdapter;
 import io.cayeta.webake.models.Recipe;
-import io.cayeta.webake.utils.*;
+import io.cayeta.webake.utils.JsonUtils;
+import io.cayeta.webake.utils.NetworkUtils;
 
 public class RecipeListActivity extends AppCompatActivity implements RecipeListAdapter.RecipeListAdapterOnClickHandler {
 

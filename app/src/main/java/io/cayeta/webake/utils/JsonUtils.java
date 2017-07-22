@@ -1,8 +1,12 @@
 package io.cayeta.webake.utils;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import io.cayeta.webake.models.*;
@@ -50,6 +54,12 @@ public class JsonUtils {
             recipes.add(new Recipe(id, servings, name, image, ingredients, instructions));
         }
         return recipes;
+    }
+
+    public static String convertToJSON(Recipe recipe) throws IOException {
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        return gson.toJson(recipe);
     }
 
 }
