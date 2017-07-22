@@ -56,10 +56,16 @@ public class JsonUtils {
         return recipes;
     }
 
-    public static String convertToJSON(Recipe recipe) throws IOException {
+    public static String convertToJSON(Recipe recipe) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         return gson.toJson(recipe);
+    }
+
+    public static Recipe convertFromJSON(String json) {
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        return gson.fromJson(json, Recipe.class);
     }
 
 }
