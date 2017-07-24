@@ -40,7 +40,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         String image = mRecipes.get(position).getImage();
         String name = mRecipes.get(position).getName();
         Context context = holder.mRecipeImage.getContext();
-        if (!image.equals("")) {
+        if (!image.isEmpty()) {
             Picasso.with(context).load(image).into(holder.mRecipeImage);
         } else {
             holder.mRecipeImage.setImageResource(R.drawable.image_placeholder);

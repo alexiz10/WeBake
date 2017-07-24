@@ -13,6 +13,10 @@
     <dimen name="instruction_list_label_padding">4dp</dimen>
     <dimen name="instruction_list_label_text_size">16sp</dimen>
 
+    <dimen name="exo_player_height">200dp</dimen>
+    <dimen name="instruction_description_margin">16dp</dimen>
+    <dimen name="instruction_description_text_size">18sp</dimen>
+
     <!--
 Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
