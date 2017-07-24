@@ -71,11 +71,11 @@ public class RecipeInstructionDetailFragment extends Fragment {
 
         Uri videoUri;
 
-        if (!videoURL.equals("")) {
+        if (!videoURL.isEmpty()) {
             videoUri = Uri.parse(videoURL);
 
             initializePlayer(videoUri);
-        } else if (!thumbnailURL.equals("") && isMp4(thumbnailURL)) {
+        } else if (!thumbnailURL.isEmpty() && isMp4(thumbnailURL)) {
             videoUri = Uri.parse(thumbnailURL);
 
             initializePlayer(videoUri);
@@ -121,8 +121,9 @@ public class RecipeInstructionDetailFragment extends Fragment {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onPause() {
+        super.onPause();
         releasePlayer();
     }
+
 }
