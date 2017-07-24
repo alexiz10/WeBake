@@ -40,6 +40,8 @@ public class RecipeInstructionDetailFragment extends Fragment {
 
     private TextView mDescriptionTextView;
 
+    private Uri mVideoUri;
+
     public static RecipeInstructionDetailFragment newInstance(ArrayList<Instruction> instructions, int position) {
         RecipeInstructionDetailFragment recipeInstructionDetailFragment = new RecipeInstructionDetailFragment();
 
@@ -69,16 +71,10 @@ public class RecipeInstructionDetailFragment extends Fragment {
         String videoURL = instructions.get(currentPosition).getVideoURL();
         String thumbnailURL = instructions.get(currentPosition).getThumbnailURL();
 
-        Uri videoUri;
-
         if (!videoURL.isEmpty()) {
-            videoUri = Uri.parse(videoURL);
-
-            initializePlayer(videoUri);
+            mVideoUri = Uri.parse(videoURL);
         } else if (!thumbnailURL.isEmpty() && isMp4(thumbnailURL)) {
-            videoUri = Uri.parse(thumbnailURL);
-
-            initializePlayer(videoUri);
+            mVideoUri = Uri.parse(thumbnailURL);
         } else {
             mPlayerView.setVisibility(View.GONE);
         }
@@ -89,6 +85,14 @@ public class RecipeInstructionDetailFragment extends Fragment {
         }
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mVideoUri != null) {
+            initializePlayer(mVideoUri);
+        }
     }
 
     private boolean isMp4(String filename) {
