@@ -20,6 +20,7 @@ import io.cayeta.webake.adapters.RecipeListAdapter;
 import io.cayeta.webake.models.Recipe;
 import io.cayeta.webake.utils.JsonUtils;
 import io.cayeta.webake.utils.NetworkUtils;
+import io.cayeta.webake.widget.RecipeWidgetProvider;
 
 public class RecipeListActivity extends AppCompatActivity implements RecipeListAdapter.RecipeListAdapterOnClickHandler {
 
@@ -80,6 +81,8 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeListA
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(ARGUMENT_RECIPE_KEY, JsonUtils.convertToJSON(recipe));
         editor.apply();
+
+        RecipeWidgetProvider.sendRefreshBroadcast(this);
 
         Intent intent = new Intent(this, RecipeDetailsActivity.class);
         intent.putExtra(ARGUMENT_RECIPE_KEY, recipe);

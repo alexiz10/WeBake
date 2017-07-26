@@ -17,13 +17,13 @@ public class RecipeWidgetRemoteViewsFactory implements RemoteViewsService.Remote
 
     private static final String ARGUMENT_RECIPE_KEY = "recipe";
 
-    private Intent mIntent;
     private Context mContext;
     private Recipe mRecipe;
+    private Intent mIntent;
 
     public RecipeWidgetRemoteViewsFactory(Context applicationContext, Intent intent) {
-        mIntent = intent;
         mContext = applicationContext;
+        mIntent = intent;
     }
 
     @Override

@@ -1,43 +1,29 @@
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#333333">
 
-    <LinearLayout
-        android:id="@+id/widget_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_widget_recipe_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/widget_recipe_name_padding"
-            android:text="@string/recipe_name_text_placeholder"
-            android:textColor="@android:color/white"
-            android:textAlignment="center"
-            android:textSize="@dimen/widget_recipe_name_text_size" />
-
-        <ListView
-            android:id="@+id/lv_widget_ingredients_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-    </LinearLayout>
-
     <TextView
-        android:id="@+id/tv_widget_error_message"
+        android:id="@+id/tv_widget_recipe_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="@dimen/widget_error_padding"
-        android:text="@string/widget_error_message"
+        android:padding="@dimen/widget_recipe_name_padding"
+        android:text="@string/recipe_name_text_placeholder"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/widget_error_text_size"
         android:textAlignment="center"
-        android:visibility="invisible" />
+        android:textSize="@dimen/widget_recipe_name_text_size" />
 
-</FrameLayout>
+    <ListView
+        android:id="@+id/lv_widget_ingredients_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="1dp"
+        android:divider="@android:color/darker_gray"
+        tools:listitem="@layout/recipe_widget_ingredient_item" />
+
+</LinearLayout>
