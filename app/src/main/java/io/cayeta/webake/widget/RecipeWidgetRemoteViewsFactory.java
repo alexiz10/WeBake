@@ -55,8 +55,6 @@ public class RecipeWidgetRemoteViewsFactory implements RemoteViewsService.Remote
         }
         RemoteViews remoteViews = new RemoteViews(mContext.getPackageName(), R.layout.recipe_widget_ingredient_item);
 
-        remoteViews.setTextViewText(R.id.tv_widget_recipe_name, mRecipe.getName());
-
         String ingredient = mRecipe.getIngredients().get(position).getIngredient() +
                 ", " +
                 mRecipe.getIngredients().get(position).getQuantity() +

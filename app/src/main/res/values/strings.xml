@@ -10,5 +10,4 @@
     <string name="ingredients_text_placeholder" translatable="false">Graham Cracker Crumbs, 2 CUP</string>
     <string name="add_widget">Add widget</string>
     <string name="instruction_description_placeholder_text" translatable="false">Recipe Introduction</string>
-    <string name="widget_error_message">No recipe found. You must first view a recipe in the application to see recipe ingredients in widget.</string>
 </resources>

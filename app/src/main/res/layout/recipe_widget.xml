@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:dividerHeight="1dp"
+        android:dividerHeight="@dimen/widget_list_view_divider_height"
         android:divider="@android:color/darker_gray"
         tools:listitem="@layout/recipe_widget_ingredient_item" />
 
