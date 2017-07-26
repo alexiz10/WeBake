@@ -7,16 +7,6 @@
     android:orientation="vertical"
     android:background="#333333">
 
-    <TextView
-        android:id="@+id/tv_widget_recipe_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/widget_recipe_name_padding"
-        android:text="@string/recipe_name_text_placeholder"
-        android:textColor="@android:color/white"
-        android:textAlignment="center"
-        android:textSize="@dimen/widget_recipe_name_text_size" />
-
     <ListView
         android:id="@+id/lv_widget_ingredients_list"
         android:layout_width="match_parent"

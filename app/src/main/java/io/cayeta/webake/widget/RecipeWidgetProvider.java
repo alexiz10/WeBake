@@ -5,11 +5,9 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.widget.RemoteViews;
 
 import io.cayeta.webake.R;
-import io.cayeta.webake.utils.JsonUtils;
 
 public class RecipeWidgetProvider extends AppWidgetProvider {
 
@@ -26,9 +24,6 @@ public class RecipeWidgetProvider extends AppWidgetProvider {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.recipe_widget);
             Intent intent = new Intent(context, RecipeWidgetRemoteViewsService.class);
             views.setRemoteAdapter(R.id.lv_widget_ingredients_list, intent);
-            SharedPreferences preferences = context.getSharedPreferences("WeBakePrefs", 0);
-            String recipeName = JsonUtils.convertFromJSON(preferences.getString("recipe", null)).getName();
-            views.setTextViewText(R.id.tv_widget_recipe_name, recipeName);
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
