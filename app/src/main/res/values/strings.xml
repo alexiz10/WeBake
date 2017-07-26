@@ -8,7 +8,7 @@
     <string name="recipe_name_text_placeholder" translatable="false">Recipe Name</string>
     <string name="instruction_list_item_text_placeholder" translatable="false">Step 0: Introduction</string>
     <string name="ingredients_text_placeholder" translatable="false">Graham Cracker Crumbs, 2 CUP</string>
-    <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
-    <string name="instruction_description_placeholder_text">Recipe Introduction</string>
+    <string name="instruction_description_placeholder_text" translatable="false">Recipe Introduction</string>
+    <string name="widget_error_message">No recipe found. You must first view a recipe in the application to see recipe ingredients in widget.</string>
 </resources>

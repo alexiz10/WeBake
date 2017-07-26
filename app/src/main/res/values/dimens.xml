@@ -22,4 +22,10 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="widget_recipe_name_padding">8dp</dimen>
+    <dimen name="widget_recipe_name_text_size">24sp</dimen>
+    <dimen name="widget_error_padding">8dp</dimen>
+    <dimen name="widget_error_text_size">24sp</dimen>
+    <dimen name="widget_ingredient_padding">8dp</dimen>
+    <dimen name="widget_ingredient_text_size">18sp</dimen>
 </resources>
